@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم الإدارية الشاملة | جمعية البر الخيرية بالجله وتبراك</title>
+  
+  <link rel="icon" type="image/jpeg" href="assets/favicon-32x32.jpeg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-header">
+      <img src="assets/cropped-logo-and-name-1.png" alt="شعار الجمعية" onerror="this.src='assets/logo-and-name.png'">
+      <div>
+        <h2>لوحة التحكم الشاملة</h2>
+        <span style="font-size: 0.75rem; color: #94A3B8;">جمعية البر بالجله وتبراك (ترخيص 210)</span>
+      </div>
+    </div>
+
+    <nav class="admin-sidebar-nav">
+      <!-- Group 1: General & Stats -->
+      <div class="admin-sidebar-section-title">عام والإحصائيات</div>
+      <a href="#" class="admin-nav-item active" data-panel="overview">
+        <span class="nav-icon" data-icon="bar-chart"></span>
+        <span>نظرة عامة والملخص</span>
+      </a>
+
+      <!-- Group 2: Site Pages Management (Page-by-Page) -->
+      <div class="admin-sidebar-section-title">إدارة صفحات الموقع</div>
+      <a href="#" class="admin-nav-item" data-panel="page-home">
+        <span class="nav-icon" data-icon="home"></span>
+        <span>الصفحة الرئيسية</span>
+      </a>
+      <a href="#" class="admin-nav-item" data-panel="page-impact">
+        <span class="nav-icon" data-icon="trending-up"></span>
+        <span>صفحة الأثر والنتائج</span>
+      </a>
+      <a href="#" class="admin-nav-item" data-panel="page-about">
+        <span class="nav-icon" data-icon="shield-check"></span>
+        <span>عن الجمعية والحوكمة</span>
+      </a>
+      <a href="#" class="admin-nav-item" data-panel="page-programs">
+        <span class="nav-icon" data-icon="layers"></span>
+        <span>البرامج الاستراتيجية</span>
+      </a>
+      <a href="#" class="admin-nav-item" data-panel="page-projects">
+        <span class="nav-icon" data-icon="gift"></span>
+        <span>المشاريع الميدانية</span>
+      </a>
+      <a href="#" class="admin-nav-item" data-panel="page-store">
+        <span class="nav-icon" data-icon="shopping-cart"></span>
+        <span>المتجر والحاسبات</span>
+      </a>
+      <a href="#" class="admin-nav-item" data-panel="page-vision">
+        <span class="nav-icon" data-icon="target"></span>
+        <span>الرؤية ومستهدفات 2030</span>
+      </a>
+      <a href="#" class="admin-nav-item" data-panel="page-contact">
+        <span class="nav-icon" data-icon="share-2"></span>
+        <span>تواصل والمركز الإعلامي</span>
+      </a>
+
+      <!-- Group 3: Media & Shared Assets -->
+      <div class="admin-sidebar-section-title">الوسائط والمحتوى</div>
+      <a href="#" class="admin-nav-item" data-panel="media">
+        <span class="nav-icon" data-icon="image"></span>
+        <span>مكتبة الصور والوسائط</span>
+      </a>
+
+      <!-- Group 4: Interaction & Inbox -->
+      <div class="admin-sidebar-section-title">الوارد والتفاعل</div>
+      <a href="#" class="admin-nav-item" data-panel="complaints">
+        <span class="nav-icon" data-icon="inbox"></span>
+        <span>صندوق الشكاوى والمقترحات</span>
+      </a>
+      <a href="#" class="admin-nav-item" data-panel="volunteers">
+        <span class="nav-icon" data-icon="users"></span>
+        <span>سجل المتطوعين والأفكار</span>
+      </a>
+
+      <!-- Group 5: System Management -->
+      <div class="admin-sidebar-section-title">إدارة النظام</div>
+      <a href="#" class="admin-nav-item" data-panel="backup">
+        <span class="nav-icon" data-icon="database"></span>
+        <span>النسخ الاحتياطي والاستعادة</span>
+      </a>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+      <a href="index.html" class="admin-btn admin-btn-primary" style="width: 100%;">
+        <span class="nav-icon" data-icon="globe"></span>
+        <span>معاينة الموقع الحي</span>
+      </a>
+      <span style="text-align: center;">إصدار النظام v3.5 • ترخيص رسمي 210</span>
+    </div>
+  </aside>
+
+  <!-- Sidebar Backdrop for Mobile/Tablet -->
+  <div id="admin-sidebar-backdrop" class="admin-sidebar-backdrop"></div>
+
+  <!-- Main Wrap -->
+  <div class="admin-main-wrap">
+    <!-- Topbar -->
+    <header class="admin-topbar">
+      <div class="admin-topbar-right">
+        <button id="admin-sidebar-toggle" class="admin-menu-toggle-btn" aria-label="تبديل القائمة الجانبية">
+          <span class="nav-icon" data-icon="menu"></span>
+        </button>
+        <h1 id="admin-page-title">نظرة عامة والملخص</h1>
+      </div>
+      <div class="admin-topbar-actions">
+        <span class="badge badge-primary admin-role-badge">حساب المشرف العام</span>
+        <a href="index.html" target="_blank" class="admin-btn admin-btn-outline admin-preview-btn" style="font-size: 0.85rem;">
+          <span class="nav-icon" data-icon="external-link"></span>
+          <span class="admin-preview-btn-text">معاينة الموقع الحي</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Content Workspace -->
+    <main class="admin-content-area">
+
+      <!-- ====================================================================
+           PANEL 1: Overview
+           ==================================================================== -->
+      <section id="panel-overview" class="admin-panel active">
+        <div class="admin-overview-stats-grid">
+          <div class="admin-card" style="margin: 0; padding: 1.25rem;">
+            <span style="font-size: 0.8rem; color: #64748B;">البرامج الاستراتيجية</span>
+            <div id="stat-programs-count" style="font-size: 2rem; font-weight: 700; color: #0F172A; line-height: 1.2;">8</div>
+            <span class="badge badge-primary" style="font-size: 0.72rem; margin-top: 0.4rem;">نشطة ومفعلة</span>
+          </div>
+
+          <div class="admin-card" style="margin: 0; padding: 1.25rem;">
+            <span style="font-size: 0.8rem; color: #64748B;">المشاريع الميدانية</span>
+            <div id="stat-projects-count" style="font-size: 2rem; font-weight: 700; color: #0F172A; line-height: 1.2;">9</div>
+            <span class="badge badge-gold" style="font-size: 0.72rem; margin-top: 0.4rem;">مبادرات مستمرة</span>
+          </div>
+
+          <div class="admin-card" style="margin: 0; padding: 1.25rem;">
+            <span style="font-size: 0.8rem; color: #64748B;">مجلس الإدارة</span>
+            <div id="stat-board-count" style="font-size: 2rem; font-weight: 700; color: #0F172A; line-height: 1.2;">7</div>
+            <span class="badge badge-indigo" style="font-size: 0.72rem; margin-top: 0.4rem;">أعضاء معتمدين</span>
+          </div>
+
+          <div class="admin-card" style="margin: 0; padding: 1.25rem;">
+            <span style="font-size: 0.8rem; color: #64748B;">لوائح الحوكمة</span>
+            <div id="stat-policies-count" style="font-size: 2rem; font-weight: 700; color: #0F172A; line-height: 1.2;">10</div>
+            <span class="badge badge-primary" style="font-size: 0.72rem; margin-top: 0.4rem;">معتمدة رسمياً</span>
+          </div>
+
+          <div class="admin-card" style="margin: 0; padding: 1.25rem;">
+            <span style="font-size: 0.8rem; color: #64748B;">التقارير المالية</span>
+            <div id="stat-financials-count" style="font-size: 2rem; font-weight: 700; color: #0F172A; line-height: 1.2;">10</div>
+            <span class="badge badge-gold" style="font-size: 0.72rem; margin-top: 0.4rem;">ميزانيات مدققة</span>
+          </div>
+
+          <div class="admin-card" style="margin: 0; padding: 1.25rem;">
+            <span style="font-size: 0.8rem; color: #64748B;">الشكاوى والوارد</span>
+            <div id="stat-complaints-count" style="font-size: 2rem; font-weight: 700; color: #0F172A; line-height: 1.2;">2</div>
+            <span class="badge badge-indigo" style="font-size: 0.72rem; margin-top: 0.4rem;">قيد المعالجة</span>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>منظومة إدارة المحتوى والتحكم الكامل في صفحات الموقع</h3>
+            <span class="badge badge-primary">متصل ومتزامن لحظياً مع التخزين المحلي</span>
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.8; color: #475569;">
+            تمنحك هذه اللوحة الإدارية تحكماً مطلقاً ودقيقاً بنسبة 100% في كافة صفحات ومكونات المنصة الرقمية لجمعية البر بالجله وتبراك:
+            تحديث نصوص وصور الواجهة الرئيسية، أرقام ومؤشرات الأثر التراكمي لـ 5 سنوات وعام 2025، تفريغ وبيانات أعضاء مجلس الإدارة والجمعية العمومية واللجان، إضافة وتعديل لوائح الحوكمة العشر، إدارة أرشيف القوائم والتقارير المالية والسنوية، إدارة البرامج الاستراتيجية والمشاريع الميدانية، وضبط أسعار وحسابات المتجر الإلكتروني وحاسبة الزكاة ومعاملات أثر التبرع.
+          </p>
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <button onclick="document.querySelector('.admin-nav-item[data-panel=\'page-home\']').click();" class="admin-btn admin-btn-primary">
+              <span class="nav-icon" data-icon="home"></span> الصفحة الرئيسية
+            </button>
+            <button onclick="document.querySelector('.admin-nav-item[data-panel=\'page-impact\']').click();" class="admin-btn admin-btn-outline">
+              <span class="nav-icon" data-icon="trending-up"></span> صفحة الأثر
+            </button>
+            <button onclick="document.querySelector('.admin-nav-item[data-panel=\'page-about\']').click();" class="admin-btn admin-btn-outline">
+              <span class="nav-icon" data-icon="shield-check"></span> الحوكمة والمالية
+            </button>
+            <button onclick="document.querySelector('.admin-nav-item[data-panel=\'page-programs\']').click();" class="admin-btn admin-btn-outline">
+              <span class="nav-icon" data-icon="layers"></span> البرامج الاستراتيجية
+            </button>
+            <button onclick="document.querySelector('.admin-nav-item[data-panel=\'page-projects\']').click();" class="admin-btn admin-btn-outline">
+              <span class="nav-icon" data-icon="gift"></span> المشاريع الميدانية
+            </button>
+            <button onclick="document.querySelector('.admin-nav-item[data-panel=\'page-store\']').click();" class="admin-btn admin-btn-outline">
+              <span class="nav-icon" data-icon="shopping-cart"></span> المتجر والحاسبات
+            </button>
+            <button onclick="document.querySelector('.admin-nav-item[data-panel=\'media\']').click();" class="admin-btn admin-btn-outline">
+              <span class="nav-icon" data-icon="image"></span> مكتبة الصور
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 2: Page 1 - Home Page CMS (الصفحة الرئيسية)
+           ==================================================================== -->
+      <section id="panel-page-home" class="admin-panel">
+        <!-- Hero Section CMS -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>واجهة الهيرو الرئيسية (الرئيسية)</h3>
+            <span class="badge badge-primary">الواجهة الرئيسية</span>
+          </div>
+          <form id="form-edit-hero">
+            <div class="admin-form-group">
+              <label class="admin-label">شارة الهيرو العلوية (Badge):</label>
+              <input type="text" id="edit-hero-badge" class="admin-input">
+            </div>
+
+            <div class="admin-form-group">
+              <label class="admin-label">العنوان الرئيسي للهيرو (H1):</label>
+              <input type="text" id="edit-hero-title" class="admin-input">
+            </div>
+
+            <div class="admin-form-group">
+              <label class="admin-label">الوصف التفسيري للهيرو:</label>
+              <textarea id="edit-hero-subtitle" class="admin-textarea"></textarea>
+            </div>
+
+            <div class="admin-grid-3">
+              <div class="admin-form-group">
+                <label class="admin-label">إحصائية الأعوام (القيمة والنص):</label>
+                <input type="text" id="edit-hero-stat-years" class="admin-input" placeholder="24">
+                <input type="text" id="edit-hero-stat-years-lbl" class="admin-input" style="margin-top: 0.35rem;" placeholder="عاماً من العطاء المستمر منذ 1423هـ">
+              </div>
+              <div class="admin-form-group">
+                <label class="admin-label">إحصائية القرى والهجر:</label>
+                <input type="text" id="edit-hero-stat-villages" class="admin-input" placeholder="+100">
+                <input type="text" id="edit-hero-stat-villages-lbl" class="admin-input" style="margin-top: 0.35rem;" placeholder="قرية وهجرة مستفيدة">
+              </div>
+              <div class="admin-form-group">
+                <label class="admin-label">إحصائية المستفيدين:</label>
+                <input type="text" id="edit-hero-stat-beneficiaries" class="admin-input" placeholder="+3,750">
+                <input type="text" id="edit-hero-stat-beneficiaries-lbl" class="admin-input" style="margin-top: 0.35rem;" placeholder="أسرة وفرد يستفيدون سنوياً">
+              </div>
+            </div>
+
+            <div class="admin-grid-2" style="margin-top: 0.5rem;">
+              <div class="admin-form-group">
+                <label class="admin-label">زر الإجراء الرئيسي (النص والرابط):</label>
+                <input type="text" id="edit-hero-cta1-text" class="admin-input" placeholder="تبرع الآن عبر المتجر الإلكتروني">
+                <input type="url" id="edit-hero-cta1-link" class="admin-input" style="margin-top: 0.35rem;" placeholder="https://aljelahstore.sa">
+              </div>
+              <div class="admin-form-group">
+                <label class="admin-label">زر الإجراء الثانوي (النص والرابط):</label>
+                <input type="text" id="edit-hero-cta2-text" class="admin-input" placeholder="استكشف أثر الجمعية ومؤشرات الأداء">
+                <input type="text" id="edit-hero-cta2-link" class="admin-input" style="margin-top: 0.35rem;" placeholder="#impact">
+              </div>
+            </div>
+
+            <button type="submit" class="admin-btn admin-btn-primary" style="margin-top: 1rem;">
+              <span class="nav-icon" data-icon="save"></span> حفظ نصوص وإحصائيات الهيرو
+            </button>
+          </form>
+        </div>
+
+        <!-- Hero Images Quick Replace -->
+        <div class="admin-grid-2">
+          <!-- Cadre Photo -->
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>صورة الكوادر الجماعية في الهيرو</h3>
+              <span class="badge badge-gold">الصورة الرسمية</span>
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+              <img id="admin-preview-hero-cadre" src="assets/Dp9qjadXQAEfX3C.jpg" class="admin-photo-preview" alt="صورة الكوادر">
+              <div style="flex: 1; min-width: 200px;">
+                <input type="file" id="hero-cadre-file" accept="image/*" class="admin-input" style="margin-bottom: 0.4rem;">
+                <input type="url" id="hero-cadre-url" class="admin-input" placeholder="أو رابط URL جديد..." style="margin-bottom: 0.5rem;">
+                <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="saveHeroCadrePhoto()">
+                  <span class="nav-icon" data-icon="save"></span> تحديث صورة الكوادر
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Headquarters Photo -->
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>صورة مقر ومبنى الجمعية الرسمي</h3>
+              <span class="badge badge-primary">المقر الرئيسي</span>
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+              <img id="admin-preview-hero-bldg" src="assets/building-e1592208490220.png" class="admin-photo-preview" alt="صورة المقر">
+              <div style="flex: 1; min-width: 200px;">
+                <input type="file" id="building-photo-file" accept="image/*" class="admin-input" style="margin-bottom: 0.4rem;">
+                <input type="url" id="building-photo-url" class="admin-input" placeholder="أو رابط URL للمبنى..." style="margin-bottom: 0.5rem;">
+                <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="saveBuildingPhoto()">
+                  <span class="nav-icon" data-icon="save"></span> تحديث صورة المقر
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 3: Page 2 - Impact Page CMS (صفحة الأثر)
+           ==================================================================== -->
+      <section id="panel-page-impact" class="admin-panel">
+        <!-- Impact Subtabs -->
+        <div class="admin-subtabs-nav">
+          <button class="admin-subtab-btn active" data-subtab="impact-current">
+            <span class="nav-icon" data-icon="calendar"></span> مؤشرات عام 2025 (العام الحالي)
+          </button>
+          <button class="admin-subtab-btn" data-subtab="impact-five">
+            <span class="nav-icon" data-icon="trending-up"></span> المؤشرات التراكمية (5 سنوات)
+          </button>
+          <button class="admin-subtab-btn" data-subtab="impact-sectors">
+            <span class="nav-icon" data-icon="pie-chart"></span> قطاعات الصرف الـ 8
+          </button>
+        </div>
+
+        <!-- Subtab 1: Current Year 2025 -->
+        <div id="subtab-panel-impact-current" class="admin-subtab-content">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>مؤشرات أثر عام 2025 (العام المالي المكتمل)</h3>
+              <span class="badge badge-primary">بيانات مدققة</span>
+            </div>
+            <form id="form-edit-impact-current">
+              <div class="admin-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label">إجمالي الحالات والأفراد المستفيدين:</label>
+                  <input type="text" id="kpi-edit-cur-total-cases" class="admin-input" placeholder="+3,750">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">إجمالي المصروفات والمساعدات (ر.س):</label>
+                  <input type="text" id="kpi-edit-cur-disbursed" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">الأسر المستفيدة دورياً (كفاف):</label>
+                  <input type="text" id="kpi-edit-cur-families" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">عدد القرى والهجر المشمولة:</label>
+                  <input type="text" id="kpi-edit-cur-villages" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">مستفيدو سقيا الماء بالوايتات:</label>
+                  <input type="text" id="kpi-edit-cur-water" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">الأيتام المكفولين بانتظام:</label>
+                  <input type="text" id="kpi-edit-cur-orphans" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">دخل الأسر المنتجة المحقق (ر.س):</label>
+                  <input type="text" id="kpi-edit-cur-productive" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">تكلفة ترميم وتحسين المساكن (ر.س):</label>
+                  <input type="text" id="kpi-edit-cur-housing" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">خريجو وخريجات معهد الحاسب:</label>
+                  <input type="text" id="kpi-edit-cur-training" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">مستفيدو رعاية كبار السن والمعاقين:</label>
+                  <input type="text" id="kpi-edit-cur-disabled" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">وجبات إفطار صائم الموزعة:</label>
+                  <input type="text" id="kpi-edit-cur-iftar" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">مستفيدو كسوة العيد والشتاء:</label>
+                  <input type="text" id="kpi-edit-cur-clothing" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">مبالغ الزكاة الشرعية المنصرفة (ر.س):</label>
+                  <input type="text" id="kpi-edit-cur-zakat" class="admin-input">
+                </div>
+              </div>
+              <button type="submit" class="admin-btn admin-btn-primary" style="margin-top: 1rem;">
+                <span class="nav-icon" data-icon="save"></span> حفظ مؤشرات أثر 2025
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Subtab 2: Five Years Cumulative -->
+        <div id="subtab-panel-impact-five" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>المؤشرات التراكمية لآخر خمس سنوات (2021 - 2025)</h3>
+              <span class="badge badge-gold">أثر تراكمي</span>
+            </div>
+            <form id="form-edit-impact-five">
+              <div class="admin-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label">إجمالي الحالات والأفراد لـ 5 سنوات:</label>
+                  <input type="text" id="kpi-edit-five-total-cases" class="admin-input" placeholder="+18,500">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">إجمالي المساعدات لـ 5 سنوات (ر.س):</label>
+                  <input type="text" id="kpi-edit-five-disbursed" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">الأسر المستفيدة التراكمية:</label>
+                  <input type="text" id="kpi-edit-five-families" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">مستفيدو السقيا والتحلية لـ 5 سنوات:</label>
+                  <input type="text" id="kpi-edit-five-water" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">دخل الأسر المنتجة التراكمي (ر.س):</label>
+                  <input type="text" id="kpi-edit-five-productive" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">استثمار ترميم المساكن التراكمي (ر.س):</label>
+                  <input type="text" id="kpi-edit-five-housing" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">كفالات الأيتام التراكمية (ر.س):</label>
+                  <input type="text" id="kpi-edit-five-orphans" class="admin-input">
+                </div>
+              </div>
+              <button type="submit" class="admin-btn admin-btn-primary" style="margin-top: 1rem;">
+                <span class="nav-icon" data-icon="save"></span> حفظ المؤشرات التراكمية لـ 5 سنوات
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Subtab 3: Sector Breakdown Metrics (قطاعات الصرف) -->
+        <div id="subtab-panel-impact-sectors" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>قطاعات الصرف والمصروفات الاستراتيجية</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddSectorModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة قطاع صرف جديد
+              </button>
+            </div>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>اسم القطاع</th>
+                  <th>الحالات / الأسر المستفيدة</th>
+                  <th>طبيعة الدعم والمساعدة</th>
+                  <th>المبلغ المنصرف</th>
+                  <th>النسبة %</th>
+                  <th>الوسم / التصنيف</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="admin-sectors-tbody">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 4: Page 3 - About, Governance & Financials CMS (عن الجمعية)
+           ==================================================================== -->
+      <section id="panel-page-about" class="admin-panel">
+        <div class="admin-subtabs-nav">
+          <button class="admin-subtab-btn active" data-subtab="about-brand">
+            <span class="nav-icon" data-icon="file-text"></span> بيانات التأسيس والمقر
+          </button>
+          <button class="admin-subtab-btn" data-subtab="about-board">
+            <span class="nav-icon" data-icon="users"></span> مجلس الإدارة (7)
+          </button>
+          <button class="admin-subtab-btn" data-subtab="about-assembly">
+            <span class="nav-icon" data-icon="users"></span> الجمعية العمومية
+          </button>
+          <button class="admin-subtab-btn" data-subtab="about-committees">
+            <span class="nav-icon" data-icon="layers"></span> اللجان العاملة
+          </button>
+          <button class="admin-subtab-btn" data-subtab="about-governance">
+            <span class="nav-icon" data-icon="shield-check"></span> اللوائح والسياسات (10)
+          </button>
+          <button class="admin-subtab-btn" data-subtab="about-financials">
+            <span class="nav-icon" data-icon="dollar-sign"></span> القوائم والتقارير المالية
+          </button>
+          <button class="admin-subtab-btn" data-subtab="about-annual">
+            <span class="nav-icon" data-icon="book-open"></span> التقارير السنوية
+          </button>
+        </div>
+
+        <!-- Subtab 1: Brand & Establishment -->
+        <div id="subtab-panel-about-brand" class="admin-subtab-content">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>بيانات الترخيص والمقر الرسمي للجمعية</h3>
+            </div>
+            <form id="form-edit-brand">
+              <div class="admin-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label">اسم الجمعية بالعربية:</label>
+                  <input type="text" id="edit-brand-name-ar" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">اسم الجمعية بالإنجليزية:</label>
+                  <input type="text" id="edit-brand-name-en" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">رقم الترخيص الرسمي:</label>
+                  <input type="text" id="edit-brand-license" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">تاريخ التأسيس الهجري:</label>
+                  <input type="text" id="edit-brand-date" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">جهة الإشراف الفني والنظامي:</label>
+                  <input type="text" id="edit-brand-supervision" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">العنوان البريدي والرمز:</label>
+                  <input type="text" id="edit-brand-postal" class="admin-input">
+                </div>
+              </div>
+              <div class="admin-form-group">
+                <label class="admin-label">المقر الرئيسي الكامل:</label>
+                <input type="text" id="edit-brand-headquarters" class="admin-input">
+              </div>
+              <button type="submit" class="admin-btn admin-btn-primary">
+                <span class="nav-icon" data-icon="save"></span> حفظ بيانات الترخيص والتأسيس
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Subtab 2: Board Members -->
+        <div id="subtab-panel-about-board" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>أعضاء مجلس الإدارة للدورة الحالية المعتمدة</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddBoardMemberModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة عضو مجلس إدارة
+              </button>
+            </div>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>الاسم الكريم</th>
+                  <th>المنصب الإداري</th>
+                  <th>اللجنة / الوسم</th>
+                  <th>الخبرة والاختصاص</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="admin-board-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Subtab 3: General Assembly -->
+        <div id="subtab-panel-about-assembly" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>أعضاء الجمعية العمومية</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddAssemblyMemberModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة عضو عمومية
+              </button>
+            </div>
+            <div id="admin-assembly-list" class="admin-grid-3">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtab 4: Working Committees -->
+        <div id="subtab-panel-about-committees" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>اللجان العاملة المنبثقة عن المجلس</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddCommitteeModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة لجنة جديدة
+              </button>
+            </div>
+            <div id="admin-committees-container" style="display: flex; flex-direction: column; gap: 1rem;">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtab 5: Governance Policies (اللوائح والسياسات الـ 10) -->
+        <div id="subtab-panel-about-governance" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>اللوائح والسياسات المعتمدة (10 سياسات حوكمة رسمية)</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddPolicyModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة لائحة جديدة
+              </button>
+            </div>
+            <div id="admin-policies-container" style="display: flex; flex-direction: column; gap: 1rem;">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtab 6: Financial Reports (التقارير المالية) -->
+        <div id="subtab-panel-about-financials" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>أرشيف القوائم والتقارير المالية المدققة</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddFinancialReportModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة تقرير مالي / ميزانية
+              </button>
+            </div>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>السنة</th>
+                  <th>الفترة / نوع التقرير</th>
+                  <th>الحالة</th>
+                  <th>روابط الملفات الرسمية</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="admin-financials-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Subtab 7: Annual Reports (التقارير السنوية) -->
+        <div id="subtab-panel-about-annual" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>التقارير السنوية والخطط التشغيلية</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddAnnualReportModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة تقرير سنوي
+              </button>
+            </div>
+            <div id="admin-annual-reports-container" class="admin-grid-3">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 5: Page 4 - Strategic Programs CMS (البرامج الاستراتيجية)
+           ==================================================================== -->
+      <section id="panel-page-programs" class="admin-panel">
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>إدارة البرامج الاستراتيجية الأساسية (الـ 8 برامج)</h3>
+            <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddProgramModal()">
+              <span class="nav-icon" data-icon="plus"></span> إضافة برنامج جديد
+            </button>
+          </div>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>اسم البرنامج</th>
+                <th>التصنيف</th>
+                <th>المصروفات والميزانية</th>
+                <th>المستفيدون</th>
+                <th>رقم الترخيص وPDF</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="admin-programs-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 6: Page 5 - Seasonal & Field Projects CMS (المشاريع الميدانية)
+           ==================================================================== -->
+      <section id="panel-page-projects" class="admin-panel">
+        <!-- Projects Impact Overview -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>لوحة أثر وإحصائيات المشاريع الميدانية</h3>
+          </div>
+          <form id="form-edit-projects-impact">
+            <div class="admin-grid-4">
+              <div class="admin-form-group">
+                <label class="admin-label">مخصصات المشاريع (ر.س):</label>
+                <input type="text" id="proj-edit-budget" class="admin-input">
+              </div>
+              <div class="admin-form-group">
+                <label class="admin-label">إجمالي المستفيدين:</label>
+                <input type="text" id="proj-edit-beneficiaries" class="admin-input">
+              </div>
+              <div class="admin-form-group">
+                <label class="admin-label">عدد المشاريع المنفذة:</label>
+                <input type="text" id="proj-edit-count" class="admin-input">
+              </div>
+              <div class="admin-form-group">
+                <label class="admin-label">نسبة الإنجاز الميداني:</label>
+                <input type="text" id="proj-edit-completion" class="admin-input">
+              </div>
+            </div>
+            <button type="submit" class="admin-btn admin-btn-primary">
+              <span class="nav-icon" data-icon="save"></span> حفظ مؤشرات المشاريع
+            </button>
+          </form>
+        </div>
+
+        <!-- Projects CRUD Table -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>قائمة المشاريع التنموية والموسمية</h3>
+            <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddProjectModal()">
+              <span class="nav-icon" data-icon="plus"></span> إضافة مشروع جديد
+            </button>
+          </div>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>اسم المشروع</th>
+                <th>التصنيف</th>
+                <th>المبلغ التقديري</th>
+                <th>المستفيدون</th>
+                <th>الحالة</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="admin-projects-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 7: Page 6 - Store & Calculators CMS (المتجر والحاسبات)
+           ==================================================================== -->
+      <section id="panel-page-store" class="admin-panel">
+        <div class="admin-subtabs-nav">
+          <button class="admin-subtab-btn active" data-subtab="store-impact">
+            <span class="nav-icon" data-icon="shopping-cart"></span> أثر المتجر وفرص التبرع
+          </button>
+          <button class="admin-subtab-btn" data-subtab="store-banks">
+            <span class="nav-icon" data-icon="card"></span> الحسابات البنكية الرسمية
+          </button>
+          <button class="admin-subtab-btn" data-subtab="store-zakat">
+            <span class="nav-icon" data-icon="calculator"></span> إعدادات حاسبة الزكاة
+          </button>
+          <button class="admin-subtab-btn" data-subtab="store-simulator">
+            <span class="nav-icon" data-icon="sparkles"></span> معاملات محاكاة أثر التبرع
+          </button>
+        </div>
+
+        <!-- Subtab 1: Store Impact & Opportunities -->
+        <div id="subtab-panel-store-impact" class="admin-subtab-content">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>لوحة أثر المتجر الإلكتروني والبوابة الرقمية</h3>
+            </div>
+            <form id="form-edit-store-dashboard">
+              <div class="admin-grid-4">
+                <div class="admin-form-group">
+                  <label class="admin-label">إجمالي التبرعات (ر.س):</label>
+                  <input type="text" id="store-edit-total" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">العمليات المكتملة:</label>
+                  <input type="text" id="store-edit-orders" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">المتبرعون الرقميون:</label>
+                  <input type="text" id="store-edit-donors" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">المشاريع الممولة:</label>
+                  <input type="text" id="store-edit-projects" class="admin-input">
+                </div>
+              </div>
+              <button type="submit" class="admin-btn admin-btn-primary">
+                <span class="nav-icon" data-icon="save"></span> حفظ مؤشرات المتجر
+              </button>
+            </form>
+          </div>
+
+          <!-- Featured Opportunities CRUD -->
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>فرص التبرع السريع بالمتجر الإلكتروني</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddStoreLinkModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة فرصة تبرع
+              </button>
+            </div>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>اسم الفرصة</th>
+                  <th>السعر / السهم</th>
+                  <th>التصنيف</th>
+                  <th>الرابط بالمتجر</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="admin-store-links-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Subtab 2: Bank Accounts -->
+        <div id="subtab-panel-store-banks" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>الحسابات البنكية الرسمية المعتمدة</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddBankAccountModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة حساب بنكي جديد
+              </button>
+            </div>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>البنك</th>
+                  <th>الغرض والمصرف الشرعي</th>
+                  <th>الآيبان الدولي (IBAN)</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="admin-banks-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Subtab 3: Zakat Calculator Config -->
+        <div id="subtab-panel-store-zakat" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>ضبط أسعار ونصاب حاسبة الزكاة الشرعية</h3>
+              <span class="badge badge-primary">حاسبة معتمدة</span>
+            </div>
+            <form id="form-edit-zakat-calc">
+              <div class="admin-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label">سعر غرام الذهب عيار 24 (ر.س):</label>
+                  <input type="number" id="calc-edit-gold24" class="admin-input" step="0.5">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">سعر غرام الذهب عيار 21 (ر.س):</label>
+                  <input type="number" id="calc-edit-gold21" class="admin-input" step="0.5">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">سعر غرام الذهب عيار 18 (ر.س):</label>
+                  <input type="number" id="calc-edit-gold18" class="admin-input" step="0.5">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">سعر غرام الفضة الخالصة (ر.س):</label>
+                  <input type="number" id="calc-edit-silver" class="admin-input" step="0.1">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">نصاب الذهب (غرام):</label>
+                  <input type="number" id="calc-edit-nisab-gold" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">نصاب الفضة (غرام):</label>
+                  <input type="number" id="calc-edit-nisab-silver" class="admin-input">
+                </div>
+              </div>
+              <button type="submit" class="admin-btn admin-btn-primary" style="margin-top: 1rem;">
+                <span class="nav-icon" data-icon="save"></span> حفظ إعدادات وأسعار حاسبة الزكاة
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Subtab 4: Impact Simulator Multipliers & Presets -->
+        <div id="subtab-panel-store-simulator" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>معاملات تحويل أثر التبرع التفاعلية</h3>
+            </div>
+            <form id="form-edit-impact-simulator">
+              <div class="admin-grid-4">
+                <div class="admin-form-group">
+                  <label class="admin-label">تكلفة إطعام أسرة لليوم (ر.س):</label>
+                  <input type="number" id="calc-edit-factor-food" class="admin-input" step="1">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">لتر ماء محلى لكل ريال:</label>
+                  <input type="number" id="calc-edit-factor-water" class="admin-input" step="1">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">كفالة يتيم شهرية (ر.س):</label>
+                  <input type="number" id="calc-edit-factor-orphan" class="admin-input" step="10">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">كسوة عيد أو حقيبة (ر.س):</label>
+                  <input type="number" id="calc-edit-factor-clothes" class="admin-input" step="10">
+                </div>
+              </div>
+              <button type="submit" class="admin-btn admin-btn-primary">
+                <span class="nav-icon" data-icon="save"></span> حفظ معاملات محاكاة الأثر
+              </button>
+            </form>
+          </div>
+
+          <!-- Simulation Presets CRUD -->
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>شرائح محاكاة الأثر السريعة (Presets)</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddPresetModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة شريحة أثر جديدة
+              </button>
+            </div>
+            <div id="admin-presets-container" class="admin-grid-3">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 8: Page 7 - Vision & 2030 Goals CMS (الرؤية و2030)
+           ==================================================================== -->
+      <section id="panel-page-vision" class="admin-panel">
+        <!-- Vision & Mission Statement -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>الرؤية والرسالة والقيم المؤسسية للجمعية</h3>
+          </div>
+          <form id="form-edit-vision-mission">
+            <div class="admin-form-group">
+              <label class="admin-label">نص رؤية الجمعية:</label>
+              <textarea id="edit-vision-text" class="admin-textarea"></textarea>
+            </div>
+            <div class="admin-form-group">
+              <label class="admin-label">نص رسالة الجمعية:</label>
+              <textarea id="edit-mission-text" class="admin-textarea"></textarea>
+            </div>
+            <button type="submit" class="admin-btn admin-btn-primary">
+              <span class="nav-icon" data-icon="save"></span> حفظ نصوص الرؤية والرسالة
+            </button>
+          </form>
+        </div>
+
+        <!-- 2030 Targets CRUD -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>مستهدفات رؤية المملكة 2030 التنموية</h3>
+            <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddVisionGoalModal()">
+              <span class="nav-icon" data-icon="plus"></span> إضافة مستهدف جديد
+            </button>
+          </div>
+          <div id="admin-vision-goals-container" style="display: flex; flex-direction: column; gap: 1rem;">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 9: Page 8 - Contact & Media Center CMS (تواصل والمركز الإعلامي)
+           ==================================================================== -->
+      <section id="panel-page-contact" class="admin-panel">
+        <div class="admin-subtabs-nav">
+          <button class="admin-subtab-btn active" data-subtab="contact-info">
+            <span class="nav-icon" data-icon="phone"></span> بيانات الإدارة والتواصل
+          </button>
+          <button class="admin-subtab-btn" data-subtab="contact-media-center">
+            <span class="nav-icon" data-icon="share-2"></span> تغريدات وحملات المركز الإعلامي
+          </button>
+        </div>
+
+        <!-- Subtab 1: Executive Contact -->
+        <div id="subtab-panel-contact-info" class="admin-subtab-content">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>بيانات الإدارة التنفيذية وقنوات الاتصال</h3>
+            </div>
+            <form id="form-edit-executive">
+              <div class="admin-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label">اسم المدير التنفيذي:</label>
+                  <input type="text" id="edit-exec-name" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">المسمى الوظيفي:</label>
+                  <input type="text" id="edit-exec-title" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">البريد الإلكتروني للإدارة:</label>
+                  <input type="email" id="edit-exec-email" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">الهاتف والتحويلة:</label>
+                  <input type="text" id="edit-exec-phone" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">الفاكس والتحويلة:</label>
+                  <input type="text" id="edit-exec-fax" class="admin-input">
+                </div>
+                <div class="admin-form-group">
+                  <label class="admin-label">البريد الرسمي العام:</label>
+                  <input type="email" id="edit-brand-email" class="admin-input">
+                </div>
+              </div>
+              <button type="submit" class="admin-btn admin-btn-primary">
+                <span class="nav-icon" data-icon="save"></span> حفظ بيانات الإدارة والتواصل
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Subtab 2: Social Media & Campaigns Feed -->
+        <div id="subtab-panel-contact-media-center" class="admin-subtab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <h3>حملات وتغريدات المركز الإعلامي (إكس / وسائل التواصل)</h3>
+              <button type="button" class="admin-btn admin-btn-primary admin-btn-sm" onclick="openAddSocialCampaignModal()">
+                <span class="nav-icon" data-icon="plus"></span> إضافة حملة / تغريدة إعلامية
+              </button>
+            </div>
+            <div id="admin-social-campaigns-container" class="admin-grid-3">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 10: Shared Media Library (مكتبة الصور والوسائط)
+           ==================================================================== -->
+      <section id="panel-media" class="admin-panel">
+        <!-- Add Image Form -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>رفع وإضافة صورة جديدة لمكتبة الوسائط</h3>
+          </div>
+          <form id="form-add-image">
+            <div class="admin-grid-3">
+              <div class="admin-form-group">
+                <label class="admin-label">عنوان الصورة أو الوصف:</label>
+                <input type="text" id="new-img-title" class="admin-input" required placeholder="مثال: توزيع سلال الغذاء في هجرة فهاق">
+              </div>
+
+              <div class="admin-form-group">
+                <label class="admin-label">التصنيف:</label>
+                <select id="new-img-category" class="admin-select">
+                  <option value="الكوادر والإدارة">الكوادر والإدارة</option>
+                  <option value="المقر الرئيسي">المقر الرئيسي</option>
+                  <option value="سقيا الماء">سقيا الماء</option>
+                  <option value="برنامج كيان">برنامج كيان</option>
+                  <option value="برنامج كفاف">برنامج كفاف</option>
+                  <option value="المناسبات الوطنية">المناسبات الوطنية</option>
+                  <option value="عام">عام</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label class="admin-label">رفع ملف من الجهاز أو رابط:</label>
+                <input type="file" id="new-img-file" accept="image/*" class="admin-input" style="margin-bottom: 0.4rem;">
+                <input type="url" id="new-img-url" class="admin-input" placeholder="أو ضع رابط URL للصورة...">
+              </div>
+            </div>
+
+            <button type="submit" class="admin-btn admin-btn-primary">
+              <span class="nav-icon" data-icon="plus"></span> إضافة الصورة للمكتبة
+            </button>
+          </form>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>معرض الصور والوسائط المستخدمة بالموقع</h3>
+          </div>
+          <div id="admin-gallery-grid" class="media-manager-grid">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 11: Complaints & Suggestions Inbox (الشكاوى والمقترحات)
+           ==================================================================== -->
+      <section id="panel-complaints" class="admin-panel">
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>صندوق الشكاوى والمقترحات الواردة عبر الموقع</h3>
+          </div>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>رقم القيد</th>
+                <th>التاريخ</th>
+                <th>المرسل</th>
+                <th>القسم</th>
+                <th>الموضوع والرسالة</th>
+                <th>الحالة والإجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="admin-complaints-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 12: Volunteers & Ideas Log (المتطوعين والأفكار)
+           ==================================================================== -->
+      <section id="panel-volunteers" class="admin-panel">
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>سجل المتطوعين والمشاركات الفكرية الواردة</h3>
+          </div>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>رقم التسجيل</th>
+                <th>التاريخ</th>
+                <th>الاسم ومعلومات الاتصال</th>
+                <th>نوع المشاركة والمهارة</th>
+                <th>تفاصيل العطاء أو الفكرة</th>
+                <th>الإجراء</th>
+              </tr>
+            </thead>
+            <tbody id="admin-volunteers-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 13: Backup & Restore (النسخ الاحتياطي)
+           ==================================================================== -->
+      <section id="panel-backup" class="admin-panel">
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>النسخ الاحتياطي واستعادة البيانات</h3>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <div>
+              <h4 style="font-size: 1.05rem; font-weight: 700;">1. تصدير نسخة احتياطية كاملة (JSON Export):</h4>
+              <p style="font-size: 0.9rem; color: #64748B; margin-bottom: 0.75rem;">
+                تحميل ملف JSON يحتوي على كافة بيانات الموقع ومؤشرات الأثر والتعديلات والصور في ملف آمن يمكن حفظه خارجياً.
+              </p>
+              <button id="btn-export-backup" class="admin-btn admin-btn-primary">
+                <span class="nav-icon" data-icon="download"></span> تصدير ملف النسخة الاحتياطية (Download JSON)
+              </button>
+            </div>
+
+            <div style="border-top: 1px solid #E2E8F0; padding-top: 1.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700;">2. استيراد واستعادة نسخة احتياطية (JSON Import):</h4>
+              <p style="font-size: 0.9rem; color: #64748B; margin-bottom: 0.75rem;">
+                اختر ملف النسخة الاحتياطية لاستعادة كافة البيانات إلى الموقع:
+              </p>
+              <input type="file" id="backup-file-input" accept=".json" class="admin-input" style="max-width: 400px;">
+            </div>
+
+            <div style="border-top: 1px solid #E2E8F0; padding-top: 1.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #DC2626;">3. استعادة البيانات الأصلية المعتمدة (Factory Reset):</h4>
+              <p style="font-size: 0.9rem; color: #64748B; margin-bottom: 0.75rem;">
+                إعادة ضبط الموقع بالكامل إلى البيانات الرسمية المستخرجة من أرشيف الجمعية (تصفير أي تعديلات محلية):
+              </p>
+              <button id="btn-factory-reset" class="admin-btn admin-btn-danger">
+                <span class="nav-icon" data-icon="refresh-cw"></span> استعادة البيانات الأصلية الرسمية المعتمدة
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Universal Admin Modal Dialog -->
+  <div id="admin-modal" class="admin-modal" style="display: none;">
+    <div class="admin-modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.75rem;">
+        <h3 id="admin-modal-title" style="margin: 0; font-size: 1.25rem; font-weight: 700; color: #0F172A;">عنوان النموذج</h3>
+        <button class="modal-close-btn" onclick="closeAdminModal()" aria-label="إغلاق">&times;</button>
+      </div>
+      <div id="admin-modal-body">
+        <!-- Injected dynamically by admin.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/icons.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

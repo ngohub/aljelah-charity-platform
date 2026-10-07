@@ -1,0 +1,14 @@
+# Node & Environment
+node_modules/
+.env
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
