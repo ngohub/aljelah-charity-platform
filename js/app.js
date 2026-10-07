@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initProjectsImpact();
   initPrograms();
   initSeasonalProjects();
+  initSwipeCarousels();
   initAboutSections();
   initGovernanceExplorer();
   initCalculators();
@@ -501,13 +502,17 @@ function initSeasonalProjects() {
   const homeContainer = document.getElementById("home-projects-highlights");
   const projects = window.siteData.seasonalProjects || [];
 
-  function makeCard(p) {
+  function makeCard(p, idx) {
     const iconCard = window.getSvgIcon ? window.getSvgIcon("card", "", "14px") : "";
+    const counterBadge = (typeof idx === 'number') ? `<span class="mobile-card-counter">${idx + 1} / 3</span>` : "";
     return `
       <div class="bento-cell" style="gap: 1.25rem;">
         <div>
-          <span class="badge badge-gold">${p.category}</span>
-          <h3 class="bento-title" style="font-size: 1.2rem; margin-top: 0.6rem;">${p.name}</h3>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+            <span class="badge badge-gold">${p.category}</span>
+            ${counterBadge}
+          </div>
+          <h3 class="bento-title" style="font-size: 1.2rem; margin-top: 0.4rem;">${p.name}</h3>
           <p class="bento-desc" style="font-size: 0.92rem;">${p.description}</p>
         </div>
         <div style="background: var(--color-bg); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); font-size: 0.9rem;">
@@ -532,10 +537,10 @@ function initSeasonalProjects() {
   }
 
   if (container) {
-    container.innerHTML = projects.map(makeCard).join("");
+    container.innerHTML = projects.map(p => makeCard(p)).join("");
   }
   if (homeContainer) {
-    homeContainer.innerHTML = projects.slice(0, 3).map(makeCard).join("");
+    homeContainer.innerHTML = projects.slice(0, 3).map((p, idx) => makeCard(p, idx)).join("");
   }
 }
 
@@ -582,13 +587,17 @@ function initPrograms() {
   }
 
   // Clean Grid Card for Home View
-  function makeHomeCard(p) {
+  function makeHomeCard(p, idx) {
+    const counterBadge = (typeof idx === 'number') ? `<span class="mobile-card-counter">${idx + 1} / 3</span>` : "";
     return `
       <div class="program-card">
         <div class="program-card-head">
           <img src="${p.logo}" alt="${p.name}" class="program-logo-thumb" onerror="this.src='assets/cropped-logo-emblem.jpeg'">
-          <div class="program-head-info">
-            <h3>${p.name}</h3>
+          <div class="program-head-info" style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+              <h3 style="margin: 0;">${p.name}</h3>
+              ${counterBadge}
+            </div>
             <p>${p.subtitle}</p>
           </div>
         </div>
@@ -615,7 +624,7 @@ function initPrograms() {
     container.innerHTML = programs.map(makeHorizontalCard).join("");
   }
   if (homeContainer) {
-    homeContainer.innerHTML = programs.slice(0, 3).map(makeHomeCard).join("");
+    homeContainer.innerHTML = programs.slice(0, 3).map((p, idx) => makeHomeCard(p, idx)).join("");
   }
 }
 
@@ -1083,3 +1092,89 @@ function showToast(msg) {
 }
 
 window.showToast = showToast;
+
+/* ==========================================================================
+   Mobile Swipe Carousels Controller (Sync dots, touch arrows, and scroll)
+   ========================================================================== */
+function initSwipeCarousels() {
+  function setupCarousel(containerId, dotsId, prevBtnId, nextBtnId) {
+    const container = document.getElementById(containerId);
+    const dotsContainer = document.getElementById(dotsId);
+    if (!container || !dotsContainer) return;
+
+    const cards = container.children;
+    if (!cards || cards.length === 0) return;
+
+    let currentIndex = 0;
+
+    function updateActiveDot(idx) {
+      if (idx < 0 || idx >= cards.length) return;
+      currentIndex = idx;
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === idx);
+      });
+    }
+
+    function scrollToIndex(idx) {
+      if (idx < 0 || idx >= cards.length) return;
+      currentIndex = idx;
+      cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      updateActiveDot(idx);
+    }
+
+    // Dot click
+    dotsContainer.addEventListener('click', (e) => {
+      const dot = e.target.closest('.carousel-dot');
+      if (!dot) return;
+      const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+      scrollToIndex(idx);
+    });
+
+    // Arrow clicks
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+
+    if (prevBtn) {
+      // In Arabic RTL, prev moves towards right (index - 1)
+      prevBtn.addEventListener('click', () => {
+        const target = Math.max(0, currentIndex - 1);
+        scrollToIndex(target);
+      });
+    }
+
+    if (nextBtn) {
+      // In Arabic RTL, next moves towards left (index + 1)
+      nextBtn.addEventListener('click', () => {
+        const target = Math.min(cards.length - 1, currentIndex + 1);
+        scrollToIndex(target);
+      });
+    }
+
+    // High performance IntersectionObserver to sync active dot on swipe
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            const idx = Array.from(cards).indexOf(entry.target);
+            if (idx !== -1) {
+              updateActiveDot(idx);
+            }
+          }
+        });
+      }, { root: container, threshold: 0.55 });
+
+      Array.from(cards).forEach(c => observer.observe(c));
+    } else {
+      container.addEventListener('scroll', () => {
+        const cardWidth = cards[0] ? cards[0].offsetWidth : 300;
+        const idx = Math.round(Math.abs(container.scrollLeft) / cardWidth);
+        updateActiveDot(Math.min(cards.length - 1, Math.max(0, idx)));
+      }, { passive: true });
+    }
+  }
+
+  setupCarousel('home-programs-highlights', 'programs-carousel-dots', 'programs-prev-btn', 'programs-next-btn');
+  setupCarousel('home-projects-highlights', 'projects-carousel-dots', 'projects-prev-btn', 'projects-next-btn');
+}
+

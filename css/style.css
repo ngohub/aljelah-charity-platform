@@ -941,6 +941,12 @@ ul, ol {
   gap: 1.75rem;
 }
 
+/* Mobile Carousel Controls (Hidden on Desktop) */
+.mobile-swipe-indicator-bar,
+.mobile-card-counter {
+  display: none !important;
+}
+
 /* Dedicated Home Store Callout */
 .home-store-callout-section {
   padding: 5rem 0;
@@ -2906,7 +2912,96 @@ ul, ol {
     font-size: 0.85rem;
   }
 
-  /* Programs & Projects: Modern App Horizontal Swipe Rail on Mobile */
+  /* Programs & Projects: Modern App Horizontal Swipe Rail with Controls on Mobile */
+  .mobile-swipe-indicator-bar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 9999px;
+    padding: 0.4rem 0.75rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.78rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .mobile-swipe-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+  .swipe-hand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    animation: swipePulse 2s infinite ease-in-out;
+  }
+  @keyframes swipePulse {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-4px); }
+  }
+  .mobile-carousel-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .carousel-arrow-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: var(--color-text-title);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s ease;
+  }
+  .carousel-arrow-btn:active {
+    background: var(--color-primary);
+    color: #FFFFFF;
+    border-color: var(--color-primary);
+    transform: scale(0.92);
+  }
+  .mobile-carousel-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0 0.15rem;
+  }
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: #CBD5E1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .carousel-dot.active {
+    width: 18px;
+    background: var(--color-primary);
+    box-shadow: 0 2px 5px rgba(30, 171, 128, 0.35);
+  }
+  .mobile-card-counter {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    background: rgba(30, 171, 128, 0.12);
+    border: 1px solid rgba(30, 171, 128, 0.25);
+    padding: 0.1rem 0.45rem;
+    border-radius: 9999px;
+  }
+
   .programs-grid-clean,
   .projects-grid-clean {
     display: flex !important;
@@ -2933,6 +3028,9 @@ ul, ol {
     min-width: 270px !important;
     scroll-snap-align: start;
     margin: 0;
+    border: 1.5px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
   }
   .program-card {
     display: flex;
