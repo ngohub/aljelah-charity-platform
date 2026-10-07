@@ -107,17 +107,22 @@ def test_admin_structure():
     with open(os.path.join(BASE_DIR, "admin.html"), "r", encoding="utf-8") as f:
         html = f.read()
 
-    # Check admin panels
+    # Check admin panels (Comprehensive Page-by-Page CMS Architecture)
     assert 'id="panel-overview"' in html
+    assert 'id="panel-page-home"' in html
+    assert 'id="panel-page-impact"' in html
+    assert 'id="panel-page-about"' in html
+    assert 'id="panel-page-programs"' in html
+    assert 'id="panel-page-projects"' in html
+    assert 'id="panel-page-store"' in html
+    assert 'id="panel-page-vision"' in html
+    assert 'id="panel-page-contact"' in html
     assert 'id="panel-media"' in html
-    assert 'id="panel-content"' in html
-    assert 'id="panel-kpis"' in html
-    assert 'id="panel-calculators"' in html
     assert 'id="panel-complaints"' in html
     assert 'id="panel-volunteers"' in html
     assert 'id="panel-backup"' in html
 
-    # Check key admin controls & subtabs
+    # Check key admin controls
     assert 'hero-cadre-file' in html, "Hero photo quick replacement control missing"
     assert 'building-photo-file' in html, "Hero building photo replacement missing"
     assert 'id="admin-preview-hero-cadre"' in html, "Hero cadre preview missing"
@@ -126,21 +131,12 @@ def test_admin_structure():
     assert 'btn-export-backup' in html, "Export backup button missing"
     assert 'btn-factory-reset' in html, "Factory reset button missing"
 
-    # Check subtabs in Content Management
-    assert 'subtab-panel-programs' in html
-    assert 'subtab-panel-projects' in html
-    assert 'subtab-panel-board' in html
-    assert 'subtab-panel-assembly' in html
-    assert 'subtab-panel-committees' in html
-    assert 'subtab-panel-vision' in html
-    assert 'subtab-panel-banks' in html
-
     # Check Universal Admin Modal
     assert 'id="admin-modal"' in html, "Admin Universal Modal missing"
     assert 'id="admin-modal-title"' in html, "Admin modal title missing"
     assert 'id="admin-modal-body"' in html, "Admin modal body missing"
 
-    print("[PASS] admin.html structure verified with all control panels, subtabs, and modal.")
+    print("[PASS] admin.html structure verified with all control panels and modal.")
 
 def test_data_authenticity_and_schema():
     with open(os.path.join(BASE_DIR, "js", "data.js"), "r", encoding="utf-8") as f:

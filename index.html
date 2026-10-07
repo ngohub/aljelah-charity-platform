@@ -249,7 +249,10 @@
           </div>
 
           <div style="text-align: center; margin-top: 2.5rem;">
-            <a href="#impact" class="btn btn-primary btn-lg">عرض تفاصيل قياس الأثر والتقارير المعتمدة ➔</a>
+            <a href="#impact" class="btn btn-primary btn-lg">
+              <span>عرض تفاصيل قياس الأثر والتقارير المعتمدة</span>
+              <span class="nav-icon" data-icon="arrow-left"></span>
+            </a>
           </div>
         </div>
       </div>
@@ -265,7 +268,7 @@
             </div>
             <a href="#programs" class="btn btn-outline">
               <span>عرض كافة البرامج والتراخيص</span>
-              <span class="icon-arrow">➔</span>
+              <span class="nav-icon" data-icon="arrow-left"></span>
             </a>
           </div>
 
@@ -318,7 +321,7 @@
             </div>
             <a href="#projects" class="btn btn-outline">
               <span>عرض كافة المشاريع (13 مشروعاً)</span>
-              <span class="icon-arrow">➔</span>
+              <span class="nav-icon" data-icon="arrow-left"></span>
             </a>
           </div>
 
@@ -330,7 +333,7 @@
 
       <!-- Leadership Statement Section -->
       <div style="background: #FFFFFF; padding: 4.5rem 0; border-top: 1px solid var(--color-border);">
-        <div class="container" style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 3rem; align-items: center;">
+        <div class="container leadership-grid">
           <div>
             <img id="hero-bldg-img" src="assets/building-e1592208490220.png" alt="مقر جمعية البر الخيرية بالجله وتبراك" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; height: 260px; object-fit: cover;">
           </div>
@@ -379,7 +382,7 @@
         </div>
 
         <!-- KPI Breakdown by Strategic Goals (Human Scale First) -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+        <div class="impact-strategic-grid">
           <div class="bento-cell">
             <span class="badge badge-primary">الأمن الغذائي للأسر</span>
             <div style="font-size: 2.2rem; font-weight: 700; color: var(--color-primary-dark); margin: 0.75rem 0;">750+ أسرة مكفولة</div>
@@ -403,7 +406,7 @@
         </div>
 
         <!-- Additional KPI Cards (Cases & Beneficiaries Prominent) -->
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
+        <div class="impact-metrics-quad-grid">
           <div class="kpi-metric-card">
             <span class="kpi-value-huge">55</span>
             <span class="kpi-unit">يتيم ويتيمة</span>
@@ -538,7 +541,7 @@
 
         <!-- Tab 6: Annual Reports -->
         <div id="about-panel-reports" class="about-tab-content" style="display: none;">
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+          <div class="annual-reports-grid">
             <div class="bento-cell">
               <span class="badge badge-primary">تقرير عام 2025</span>
               <h3 class="bento-title">التقرير السنوي الشامل 2025</h3>
@@ -732,7 +735,7 @@
           <div style="text-align: center; margin-bottom: 1.5rem;">
             <span class="badge badge-primary">الحسابات البنكية الرسمية المعتمدة للإيداع المباشر</span>
           </div>
-          <div id="store-bank-accounts-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <div id="store-bank-accounts-container" class="bank-accounts-strip-grid">
             <div style="background: var(--color-bg); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
               <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem;">الزكاة الشرعية - مصرف الراجحي</strong>
               <code style="font-size: 0.85rem; direction: ltr; display: block; margin-top: 0.25rem;">SA59 8000 0414 6080 1000 0990</code>

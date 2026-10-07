@@ -695,7 +695,8 @@ function initAboutSections() {
               <span>تحميل الوثيقة المعتمدة (PDF)</span>
             </a>
             <button class="btn btn-ghost btn-sm" onclick="openGovernanceExplorerModal()">
-              <span>عرض تفاصيل الأبواب والمواد ➔</span>
+              <span>عرض تفاصيل الأبواب والمواد</span>
+              ${window.getSvgIcon('arrow-left', '', '16px')}
             </button>
           </div>
         </div>
