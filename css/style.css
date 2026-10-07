@@ -2870,72 +2870,216 @@ ul, ol {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  /* Compact Section Spacing on Mobile (Anti-Long-Scroll) */
+  .impact-dashboard-section,
+  .featured-programs-section,
+  .home-store-callout-section,
+  .featured-projects-section,
+  .leadership-section-wrapper,
+  .store-hero-banner-modern,
+  .store-featured-showcase-section,
+  .view-section > .container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .section-head,
+  .section-head-split {
+    margin-bottom: 1.5rem !important;
+    gap: 0.75rem;
+  }
+  .section-title {
+    font-size: clamp(1.35rem, 5vw, 1.65rem) !important;
+    line-height: 1.35;
+  }
+  .section-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.6;
+  }
+  .section-head-split {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-head-split .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Programs & Projects: Modern App Horizontal Swipe Rail on Mobile */
+  .programs-grid-clean,
+  .projects-grid-clean {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 0.85rem;
+    padding-top: 0.25rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    scrollbar-width: none;
+  }
+  .programs-grid-clean::-webkit-scrollbar,
+  .projects-grid-clean::-webkit-scrollbar {
+    display: none;
+  }
+  .programs-grid-clean > *,
+  .projects-grid-clean > * {
+    flex: 0 0 85% !important;
+    max-width: 320px !important;
+    min-width: 270px !important;
+    scroll-snap-align: start;
+    margin: 0;
+  }
+  .program-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .program-card-head {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  .program-logo-thumb {
+    width: 44px;
+    height: 44px;
+  }
+  .program-card-body {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  .program-card-footer {
+    padding: 0.85rem 1rem;
+    gap: 0.5rem;
+  }
+  .program-card-footer .btn {
+    flex: 1;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.78rem;
+    justify-content: center;
+  }
+
   .dashboard-controls-card {
     flex-direction: column;
     align-items: stretch;
-    gap: 1rem;
+    padding: 0.85rem;
+    gap: 0.75rem;
   }
   .dashboard-mode-toggle {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 0.35rem;
   }
   .dashboard-toggle-btn {
     width: 100%;
     text-align: center;
-    padding: 0.65rem 0.5rem;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.82rem;
   }
   .dashboard-key-kpis {
     grid-template-columns: 1fr !important;
-    gap: 1rem;
+    gap: 0.75rem;
   }
   .dashboard-breakdown-grid {
     grid-template-columns: 1fr !important;
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+  .breakdown-row-card {
+    padding: 1rem 1.15rem;
+    gap: 0.5rem;
+  }
+  .breakdown-title {
+    font-size: 0.92rem;
+  }
+  .breakdown-cases-highlight {
+    font-size: 1.1rem;
+  }
+  .breakdown-aid-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .leadership-section-wrapper {
+    padding: 2rem 0 !important;
   }
   .leadership-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
+  #hero-bldg-img {
+    height: 180px !important;
+    border-radius: var(--radius-md);
+  }
+
   .impact-strategic-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
   .impact-metrics-quad-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.85rem;
   }
   .annual-reports-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1rem;
   }
   .bank-accounts-strip-grid {
     grid-template-columns: 1fr;
-    gap: 0.85rem;
+    gap: 0.75rem;
   }
-  .programs-grid-clean,
-  .projects-grid-clean {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
+
   .store-callout-card {
     grid-template-columns: 1fr;
-    padding: 2rem 1.25rem;
-    gap: 1.75rem;
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
+    border-radius: var(--radius-lg);
   }
   .store-callout-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    margin: 0.5rem 0 0.75rem;
+    line-height: 1.35;
   }
   .store-callout-desc {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
   }
+  .store-callout-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .store-callout-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+  }
+  .qr-preview-box {
+    padding: 0.85rem;
+    max-width: 180px;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+  }
+  .qr-preview-img {
+    width: 120px;
+    height: 120px;
+  }
+  .qr-label {
+    font-size: 0.75rem;
+  }
+
   .store-hero-grid-modern {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .store-modern-title {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
   .store-products-clean-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2943,24 +3087,76 @@ ul, ol {
   }
   .program-horizontal-card {
     grid-template-columns: 1fr;
+    margin-bottom: 1.25rem;
   }
   .program-h-aside {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
     border-left: none;
     border-bottom: 1px solid var(--color-border);
-    padding: 1.5rem;
+  }
+  .program-h-logo {
+    width: 52px;
+    height: 52px;
   }
   .program-h-main {
-    padding: 1.5rem 1.25rem;
+    padding: 1.25rem;
+    gap: 0.5rem;
+  }
+  .program-h-title {
+    font-size: 1.15rem;
   }
   .program-h-bullets {
     grid-template-columns: 1fr;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
   .program-h-cta {
     border-right: none;
     border-top: 1px solid var(--color-border);
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
+    flex-direction: row;
+    gap: 0.5rem;
   }
+  .program-h-cta .btn {
+    flex: 1;
+    font-size: 0.82rem;
+    padding: 0.6rem 0.5rem;
+    justify-content: center;
+  }
+
+  .geo-villages-box {
+    max-height: 140px;
+    overflow-y: auto;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .about-tabs-nav {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .about-tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .about-tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.6rem 0.95rem;
+    font-size: 0.85rem;
+  }
+
   .impact-simulation-preview {
     grid-template-columns: 1fr;
   }
@@ -2970,11 +3166,16 @@ ul, ol {
   .gov-parts-list {
     grid-template-columns: 1fr;
   }
-  .bento-grid, .programs-grid, .board-grid, .social-feed-grid, .vision-grid-cards {
+  .bento-grid, .programs-grid, .social-feed-grid, .vision-grid-cards {
     grid-template-columns: 1fr;
   }
+  .board-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
   .assembly-tags-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
   }
   .store-products-quick-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -2987,7 +3188,7 @@ ul, ol {
     grid-template-columns: 1fr;
   }
   .form-input, .form-textarea, .form-select {
-    min-height: 46px;
+    min-height: 44px;
     font-size: 16px;
   }
   .modal-dialog {
@@ -2998,9 +3199,34 @@ ul, ol {
   .modal-header, .modal-body, .modal-footer {
     padding: 1.25rem;
   }
+
+  /* Compact 2-Col Footer on Mobile */
+  .site-footer {
+    padding: 2.5rem 0 5.5rem !important;
+  }
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1.25rem;
+  }
+  .footer-col-brand {
+    grid-column: span 2;
+  }
+  .footer-col-donate {
+    grid-column: span 2;
+  }
+  .footer-brand-header {
+    margin-bottom: 0.75rem;
+  }
+  .footer-brand-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    font-size: 0.8rem;
   }
   .top-notice-bar {
     display: none;
